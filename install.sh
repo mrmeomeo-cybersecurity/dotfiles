@@ -1,1 +1,14 @@
-IyEvdXNyL2Jpbi9lbnYgYmFzaAojIENvZGVzcGFjZXMgZG90ZmlsZXMgaW5zdGFsbGVyIOKAlCBydW5zIGF1dG9tYXRpY2FsbHkgb24gY29kZXNwYWNlIGNyZWF0aW9uLgpzZXQgLWUKRE9URklMRVNfRElSPSIkKGNkICIkKGRpcm5hbWUgIiR7QkFTSF9TT1VSQ0VbMF19IikiICYmIHB3ZCkiCmZvciBmIGluIC56c2hyYyAuZ2l0Y29uZmlnIHN0YXJzaGlwLnRvbWw7IGRvCiAgdGFyZ2V0PSIkSE9NRS8kZiIKICBbICIkZiIgPSAic3RhcnNoaXAudG9tbCIgXSAmJiB0YXJnZXQ9IiRIT01FLy5jb25maWcvc3RhcnNoaXAudG9tbCIgJiYgbWtkaXIgLXAgIiRIT01FLy5jb25maWciCiAgbG4gLXNmICIkRE9URklMRVNfRElSLyRmIiAiJHRhcmdldCIKZG9uZQojIFN0YXJzaGlwIHByb21wdCAoYmVzdCBlZmZvcnQ7IHRoZSBzaGVsbCBjb25maWcgZ3VhcmRzIG9uIGl0cyBwcmVzZW5jZSkKaWYgISBjb21tYW5kIC12IHN0YXJzaGlwID4vZGV2L251bGwgMj4mMTsgdGhlbgogIGN1cmwgLXNTIGh0dHBzOi8vc3RhcnNoaXAucnMvaW5zdGFsbC5zaCB8IHNoIC1zIC0tIC15ID4vZGV2L251bGwgMj4mMSB8fCB0cnVlCmZpCmVjaG8gImRvdGZpbGVzIGluc3RhbGxlZCBmcm9tICRET1RGSUxFU19ESVIiCg==
+#!/usr/bin/env bash
+# Codespaces dotfiles installer — runs automatically on codespace creation.
+set -e
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+for f in .zshrc .gitconfig starship.toml; do
+  target="$HOME/$f"
+  [ "$f" = "starship.toml" ] && target="$HOME/.config/starship.toml" && mkdir -p "$HOME/.config"
+  ln -sf "$DOTFILES_DIR/$f" "$target"
+done
+# Starship prompt (best effort; the shell config guards on its presence)
+if ! command -v starship >/dev/null 2>&1; then
+  curl -sS https://starship.rs/install.sh | sh -s -- -y >/dev/null 2>&1 || true
+fi
+echo "dotfiles installed from $DOTFILES_DIR"
