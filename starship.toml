@@ -1,1 +1,10 @@
-YWRkX25ld2xpbmUgPSBmYWxzZQpmb3JtYXQgPSAiJGRpcmVjdG9yeSRnaXRfYnJhbmNoJGdpdF9zdGF0dXMkbm9kZWpzJHB5dGhvbiRjbWRfZHVyYXRpb24kbGluZV9icmVhayRjaGFyYWN0ZXIiCgpbY2hhcmFjdGVyXQpzdWNjZXNzX3N5bWJvbCA9ICJb4p2vXShncmVlbikiCmVycm9yX3N5bWJvbCA9ICJb4p2vXShyZWQpIgoKW2NtZF9kdXJhdGlvbl0KbWluX3RpbWUgPSAyMDAwCmZvcm1hdCA9ICJbJGR1cmF0aW9uXSgkc3R5bGUpICIK
+add_newline = false
+format = "$directory$git_branch$git_status$nodejs$python$cmd_duration$line_break$character"
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+
+[cmd_duration]
+min_time = 2000
+format = "[$duration]($style) "
