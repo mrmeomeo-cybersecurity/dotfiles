@@ -1,1 +1,18 @@
-ZXhwb3J0IFpTSD0iJEhPTUUvLm9oLW15LXpzaCIKWlNIX1RIRU1FPSIiCnBsdWdpbnM9KGdpdCkKWyAtZiAiJFpTSC9vaC1teS16c2guc2giIF0gJiYgc291cmNlICIkWlNIL29oLW15LXpzaC5zaCIKCiMgU3RhcnNoaXAgcHJvbXB0IChpbnN0YWxsZWQgYnkgaW5zdGFsbC5zaCB3aGVuIG1pc3NpbmcpCmNvbW1hbmQgLXYgc3RhcnNoaXAgPi9kZXYvbnVsbCAyPiYxICYmIGV2YWwgIiQoc3RhcnNoaXAgaW5pdCB6c2gpIgoKZXhwb3J0IEVESVRPUj0iY29kZSAtLXdhaXQiCmFsaWFzIGxsPSJscyAtYWxGIgphbGlhcyBncz0iZ2l0IHN0YXR1cyAtc2IiCmFsaWFzIGdsPSJnaXQgbG9nIC0tb25lbGluZSAtMTUiCmFsaWFzIGdwPSJnaXQgcHVsbCAtLWZmLW9ubHkiCmFsaWFzIHBvcnRzPSJzcyAtdGxucCAyPi9kZXYvbnVsbCB8fCBuZXRzdGF0IC10bG5wIDI+L2Rldi9udWxsIgphbGlhcyBteWlwPSJjdXJsIC1zIGh0dHBzOi8vaWZjb25maWcubWU7IGVjaG8iCmFsaWFzIGRjdT0iZG9ja2VyIGNvbXBvc2UgdXAgLWQiCmFsaWFzIGRjZD0iZG9ja2VyIGNvbXBvc2UgZG93biIKYWxpYXMgZHBzPSJkb2NrZXIgcHMgLS1mb3JtYXQgJ3RhYmxlIHt7Lk5hbWVzfX1cdHt7LlN0YXR1c319XHR7ey5Qb3J0c319JyIK
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=""
+plugins=(git)
+[ -f "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
+
+# Starship prompt (installed by install.sh when missing)
+command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
+
+export EDITOR="code --wait"
+alias ll="ls -alF"
+alias gs="git status -sb"
+alias gl="git log --oneline -15"
+alias gp="git pull --ff-only"
+alias ports="ss -tlnp 2>/dev/null || netstat -tlnp 2>/dev/null"
+alias myip="curl -s https://ifconfig.me; echo"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+alias dps="docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'"
