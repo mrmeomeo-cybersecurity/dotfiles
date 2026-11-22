@@ -1,1 +1,14 @@
-W3VzZXJdCgluYW1lID0gVHVuZyBOZ3V5ZW4KCWVtYWlsID0gMTk3NjczNTgyK21ybWVvbWVvLWN5YmVyc2VjdXJpdHlAdXNlcnMubm9yZXBseS5naXRodWIuY29tCltpbml0XQoJZGVmYXVsdEJyYW5jaCA9IG1haW4KW3B1bGxdCglyZWJhc2UgPSBmYWxzZQpbY29yZV0KCWF1dG9jcmxmID0gaW5wdXQKW2FsaWFzXQoJY28gPSBjaGVja291dAoJYnIgPSBicmFuY2gKCWNpID0gY29tbWl0CglzdCA9IHN0YXR1cyAtc2IK
+[user]
+	name = Tung Nguyen
+	email = 197673582+mrmeomeo-cybersecurity@users.noreply.github.com
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[core]
+	autocrlf = input
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status -sb
